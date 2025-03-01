@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <h1>User Profile</h1>
+            
+            <div class="user-info">
+                <p><strong>Username:</strong> <span id="username">Loading...</span></p>
+            </div>
+
+            <div class="credit-section">
+                <div class="credit-info">
+                    <h3><i class="fas fa-coins"></i> Credits</h3>
+                    <p>Available: <span id="credits">Loading...</span></p>
+                </div>
+                <div id="creditHistory" class="credit-history"></div>
+            </div>
+
+            <div class="button-group">
+                <a href="upload.html" class="btn primary-btn">
+                    <i class="fas fa-upload"></i> Upload Document
+                </a>
+                <button id="logoutBtn" class="btn danger-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>

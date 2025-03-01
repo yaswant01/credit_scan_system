@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="analytics-dashboard">
+            <div class="analytics-header">
+                <h1><i class="fas fa-chart-line"></i> Analytics Dashboard</h1>
+                <div class="header-actions">
+                    <button id="exportPdfBtn" class="btn secondary-btn">
+                        <i class="fas fa-file-pdf"></i> Export PDF
+                    </button>
+                    <button id="refreshBtn" class="btn primary-btn">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                    <a href="admin.html" class="btn back-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Stats Section -->
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <h3>Total Users</h3>
+                        <p id="totalUsers">Loading...</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="stat-info">
+                        <h3>Total Scans</h3>
+                        <p id="totalScans">Loading...</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-user-check"></i>
+                    <div class="stat-info">
+                        <h3>Active Today</h3>
+                        <p id="activeUsers">Loading...</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <h3>Pending Requests</h3>
+                        <p id="pendingRequests">Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h2>Daily Scans</h2>
+                    <canvas id="dailyScansChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Top Users</h2>
+                    <canvas id="topUsersChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Common Topics</h2>
+                    <canvas id="topicsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Credit Statistics Section -->
+            <div class="credit-stats-section">
+                <h2>Credit Statistics</h2>
+                <div id="creditStats" class="credit-stats-grid">
+                    Loading credit statistics...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/analytics.js"></script>
+</body>
+</html> 

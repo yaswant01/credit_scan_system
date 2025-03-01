@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Document Scanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2><i class="fas fa-user-plus"></i> Create Account</h2>
+                <p class="auth-subtitle">Join our document scanning platform</p>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i> Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        required 
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        placeholder="Enter your password"
+                        autocomplete="new-password"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">
+                        <i class="fas fa-lock"></i> Confirm Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="confirm-password" 
+                        name="confirm-password" 
+                        required 
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                    >
+                </div>
+                
+                <button type="submit" class="btn primary-btn">
+                    <i class="fas fa-user-plus"></i> Register
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? 
+                    <a href="login.html" class="link-primary">
+                        <i class="fas fa-sign-in-alt"></i> Login here
+                    </a>
+                </p>
+            </div>
+
+            <div id="notification" class="notification" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>
