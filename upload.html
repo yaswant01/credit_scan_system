@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="upload-card">
+            <h1>Upload Document</h1>
+            
+            <div class="credit-info">
+                <p>Available Credits: <span id="credits">Loading...</span></p>
+            </div>
+
+            <form id="uploadForm" class="upload-form">
+                <div class="form-group">
+                    <label for="document">Choose Text File:</label>
+                    <input type="file" id="document" name="document" accept=".txt" required>
+                    <small class="form-help">Only .txt files are supported. Max size: 5MB</small>
+                </div>
+                <div class="form-group">
+                    <label for="algorithm">Select Similarity Algorithm:</label>
+                    <select id="algorithm" name="algorithm" class="algorithm-select" required>
+                        <option value="cosine">Cosine Similarity (Default)</option>
+                        <option value="jaccard">Jaccard Similarity</option>
+                        <option value="levenshtein">Levenshtein Distance</option>
+                        <option value="tfidf">TF-IDF Similarity</option>
+                    </select>
+                    <small class="form-help">Choose the algorithm for document comparison</small>
+                </div>
+                <button type="submit" class="btn primary-btn">
+                    <i class="fas fa-upload"></i> Upload Document (1 Credit)
+                </button>
+            </form>
+
+            <div id="uploadStatus" class="status-message"></div>
+            <div id="similarDocs" class="similar-docs-container"></div>
+
+            <div class="button-group">
+                <button id="requestCredits" class="btn secondary-btn">Request More Credits</button>
+                <a href="profile.html" class="btn back-btn">Back to Profile</a>
+            </div>
+        </div>
+
+        <!-- Add document history section -->
+        <div class="history-card">
+            <div class="history-header">
+                <h2>Document History</h2>
+                <div class="button-group">
+                    <button id="exportHistoryBtn" class="btn secondary-btn">
+                        <i class="fas fa-file-export"></i> Export CSV
+                    </button>
+                    <button id="exportPdfBtn" class="btn secondary-btn">
+                        <i class="fas fa-file-pdf"></i> Export PDF
+                    </button>
+                    <button id="clearHistoryBtn" class="btn danger-btn">
+                        <i class="fas fa-trash"></i> Clear History
+                    </button>
+                </div>
+            </div>
+            <div id="documentHistory" class="document-list">
+                Loading documents...
+            </div>
+        </div>
+    </div>
+
+    <script src="js/upload.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
